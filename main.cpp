@@ -8,66 +8,57 @@ int main()
   //player names
   string player1name = "";
   string player2name = "";
+  string playAgain = "y";
 
   //player responses
   char decision1 = ' ';
   char decision2 = ' ';
 
+while (playAgain == "y" || playAgain == "Y")
+{
+    cout<<"Player 1, please enter your name: ";
+    cin>>player1name;
+    cout<<"Player 2, please enter your name: ";
+    cin>>player2name;
 
-  cout<<"Player 1, please enter your name: ";
-  cin>>player1name;
-  cout<<"Player 2, please enter your name: ";
-  cin>>player2name;
+    cout<<"WELCOME TO SPLIT OR STEAL!\n";
 
-  cout<<"WELCOME TO SPLIT OR STEAL!\n";
+    cout<<player1name<<", please enter the character of your choice...\n";
+    cout<<"Please enter (s)plit or s(t)eal: ";
+    cin>>decision1;
 
-  cout<<player1name<<", please enter the character of your choice...\n";
-  cout<<"Please enter (s)plit or s(t)eal: ";
-  cin>>decision1;
+    cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
-  cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-      <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-      <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-      <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    cout<<player2name<<", please enter the character of your choice...\n";
+    cin>>decision2;
 
-  cout<<player2name<<", please enter the character of your choice...\n";
-  cin>>decision2;
+    if((decision1 == 't' || decision1 == 'T') && (decision2 == 's' || decision2 == 'S'))
+    {
+      cout<<player1name<<" stole while "<<player2name<<" split. "
+          <<player1name<<" WINS ALL OF THE PRIZE!\n";
+    }
+    else if((decision2 == 't' || decision2 == 'T') && (decision1 == 's' || decision1 == 'S'))
+    {
+      cout<<player2name<<" stole while "<<player1name<<" split. "
+          <<player2name<<" WINS ALL OF THE PRIZE!\n";
+    }
+    else if((decision1 == 's' || decision1 == 'S') && (decision2 == 's' || decision2 == 'S'))
+    {
+      cout<<"Both players cooperated and chose to split. Congrats, "
+          <<player1name<<" and "<<player2name<<" you each get half the prize!\n";
+    }
+    else
+    {
+      cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
+          <<"win a prize and go home with NOTHING!\n";
+    }
 
-  if(decision1 == 't' && decision2 == 's')
-  {
-    cout<<player1name<<" stole while "<<player2name<<" split. "
-        <<player1name<<" WINS ALL OF THE PRIZE!\n";
-  }
-  else if(decision2 == 't' && decision1 == 's')
-  {
-    cout<<player2name<<" stole while "<<player1name<<" split. "
-        <<player2name<<" WINS ALL OF THE PRIZE!\n";
-  }
-  else if(decision1 == 's' && decision2 == 's')
-  {
-    cout<<"Both players cooperated and chose to split. Congrats, "
-        <<player1name<<" and "<<player2name<<" you each get half the prize!\n";
-  }
-  else
-  {
-    cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
-        <<"win a prize and go home with NOTHING!\n";
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    cout << "Do you want to play again?y/n \n";
+    cin >> playAgain;
+}
 
   return 0;
 }
