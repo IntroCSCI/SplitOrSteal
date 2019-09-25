@@ -1,6 +1,7 @@
 //Kevin Buffardi (with help of class)
 #include <iostream>
 #include <string>
+#include <ctype.h>
 using namespace std;
 
 int main()
@@ -12,13 +13,13 @@ int main()
   //player responses
   char decision1 = ' ';
   char decision2 = ' ';
-
+  char again = ' ';
 
   cout<<"Player 1, please enter your name: ";
   cin>>player1name;
   cout<<"Player 2, please enter your name: ";
   cin>>player2name;
-
+  while(1){
   cout<<"WELCOME TO SPLIT OR STEAL!\n";
 
   cout<<player1name<<", please enter the character of your choice...\n";
@@ -32,6 +33,13 @@ int main()
 
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
+
+  if(isupper(decision1)) { //if d1 is upper make it lower
+    decision1 = tolower(decision1);
+  }
+ if(isupper(decision2)) { //if d2 is upper make it lower
+    decision2 = tolower(decision2);
+  }
 
   if(decision1 == 't' && decision2 == 's')
   {
@@ -54,9 +62,14 @@ int main()
         <<"win a prize and go home with NOTHING!\n";
   }
 
-
-
-
+  cout<<"Type (y) to play again, otherwise submit anyother button to close!\n";
+  cin>>again;
+  if(again == 'Y' || again == 'y'){
+   cout << "starting over!" << endl << endl;
+  }else{
+    return 0;
+  }
+  }
 
 
 
