@@ -1,5 +1,6 @@
 //Kevin Buffardi (with help of class)
 #include <iostream>
+#include <cctype>
 #include <string>
 using namespace std;
 
@@ -34,8 +35,10 @@ int main()
 			  <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
 		  cout<<player2name<<", please enter the character of your choice...\n";
-		  cin>>decision2;
-
+		  cin>> decision2;
+		
+		  decision1 = tolower(decision1);
+		  decision2 = tolower(decision2);
 		  if(decision1 == 't' && decision2 == 's')
 		  {
 			cout<<player1name<<" stole while "<<player2name<<" split. "
