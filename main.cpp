@@ -1,6 +1,8 @@
 //Kevin Buffardi (with help of class)
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <cctype>
 using namespace std;
 
 int main()
@@ -24,6 +26,7 @@ int main()
   cout<<player1name<<", please enter the character of your choice...\n";
   cout<<"Please enter (s)plit or s(t)eal: ";
   cin>>decision1;
+  decision1 = tolower(decision1);
 
   cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
       <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -32,6 +35,7 @@ int main()
 
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
+  decision2 = tolower(decision2);
 
   if(decision1 == 't' && decision2 == 's')
   {
