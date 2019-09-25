@@ -12,7 +12,9 @@ int main()
   //player responses
   char decision1 = ' ';
   char decision2 = ' ';
-
+  char again = 'Y';
+  while(again == 'Y'){ 
+   
 
   cout<<"Player 1, please enter your name: ";
   cin>>player1name;
@@ -53,21 +55,15 @@ int main()
     cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
         <<"win a prize and go home with NOTHING!\n";
   }
+ 
+  cout << "Would you like to play again? Y/N" << endl;
+  cin >> again;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  if(again == 'Y'){
+    cout << "Great!" << endl;
+  }else{
+    cout << "Goodbye" << endl;
+  }
+  }
   return 0;
 }
