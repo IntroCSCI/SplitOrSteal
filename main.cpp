@@ -14,14 +14,14 @@ int main()
   char decision1 = ' ';
   char decision2 = ' ';
 
-  string keepPlaying = "Y";
+  char keepPlaying = 'Y';
 
   cout<<"Player 1, please enter your name: ";
   cin>>player1name;
   cout<<"Player 2, please enter your name: ";
   cin>>player2name;
 
-  while(tolower(keepPlaying) == "y"){
+  while(tolower(keepPlaying) == 'y'){
 
     cout<<"WELCOME TO SPLIT OR STEAL!\n";
 
