@@ -12,3 +12,5 @@ Notes:
 
 * Each player should only enter their first names
 * The first player's choice is only "hidden" by using a lot of blank lines... technically, the second player can cheat by scrolling up
+
+[![Build Status](https://travis-ci.org/DeWubs/SplitOrSteal.svg?branch=master)](https://travis-ci.org/DeWubs/SplitOrSteal)
