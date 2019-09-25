@@ -33,6 +33,10 @@ int main()
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
 
+  // turn both decision 1 and 2 to lowercase so the input would work the same
+  decision1 = tolower(decision1);
+  decision2 = tolower(decision2);
+
   if(decision1 == 't' && decision2 == 's')
   {
     cout<<player1name<<" stole while "<<player2name<<" split. "
