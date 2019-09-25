@@ -1,10 +1,12 @@
 //Kevin Buffardi (with help of class)
 #include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 int main()
 {
+  char play_again = ' ';
   //player names
   string player1name = "";
   string player2name = "";
@@ -13,6 +15,7 @@ int main()
   char decision1 = ' ';
   char decision2 = ' ';
 
+  do {
 
   cout<<"Player 1, please enter your name: ";
   cin>>player1name;
@@ -32,6 +35,9 @@ int main()
 
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
+
+  decision1 = tolower(decision1);
+  decision2 = tolower(decision2);
 
   if(decision1 == 't' && decision2 == 's')
   {
@@ -53,6 +59,11 @@ int main()
     cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
         <<"win a prize and go home with NOTHING!\n";
   }
+
+  cout << "Do you want to play again?\n";
+  cin >> play_again;
+
+} while (tolower(play_again) == 'y');
 
 
 
