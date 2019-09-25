@@ -20,7 +20,7 @@ int main()
   cin>>player2name;
 
   cout<<"WELCOME TO SPLIT OR STEAL!\n";
-
+do{
   cout<<player1name<<", please enter the character of your choice...\n";
   cout<<"Please enter (s)plit or s(t)eal: ";
   cin>>decision1;
@@ -54,8 +54,9 @@ int main()
         <<"win a prize and go home with NOTHING!\n";
   }
 
-
-
+cout << "Do you want to play again?(Y/N)" << endl;
+cin>> again;
+}while(again == 'Y')
 
 
 
