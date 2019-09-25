@@ -12,16 +12,16 @@ int main()
   //player responses
   char decision1 = ' ';
   char decision2 = ' ';
-  int again =0;
-  int again2;
+  //int again =0;
+//  int again2;
   cout<<"Player 1, please enter your name: ";
   cin>>player1name;
   cout<<"Player 2, please enter your name: ";
   cin>>player2name;
 
   cout<<"WELCOME TO SPLIT OR STEAL!\n";
-do
-{
+ //do
+ //{
   cout<<player1name<<", please enter the character of your choice...\n";
   cout<<"Please enter (s)plit or s(t)eal: ";
   cin>>decision1;
@@ -33,7 +33,7 @@ do
 
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
-tolower(decision2);
+ //tolower(decision2);
   if(decision1 == 't' && decision2 == 's')
   {
     cout<<player1name<<" stole while "<<player2name<<" split. "
@@ -54,10 +54,10 @@ tolower(decision2);
     cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
         <<"win a prize and go home with NOTHING!\n";
   }
-cout << "again? 1=yes, 0 =no " << endl;
-cin >> again;
-}
-while(again =1);
+//cout << "again? 1=yes, 0 =no " << endl;
+//cin >> again;
+//}
+//while(again =1);
 
 
 
