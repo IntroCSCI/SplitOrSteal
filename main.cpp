@@ -63,7 +63,7 @@ int main()
         cout << "Would you like to play again? (y/n)\n";
 
         cin >> playAgain;
-    } while( playAgain == 'y' );
+    } while( tolower(playAgain) == 'y' );
 
 
 
