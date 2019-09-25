@@ -1,6 +1,7 @@
 //Kevin Buffardi (with help of class)
 #include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 int main()
@@ -20,12 +21,12 @@ int main()
   cin>>player1name;
   cout<<"Player 2, please enter your name: ";
   cin>>player2name;
-
+  
   cout<<"WELCOME TO SPLIT OR STEAL!\n";
-
   cout<<player1name<<", please enter the character of your choice...\n";
   cout<<"Please enter (s)plit or s(t)eal: ";
   cin>>decision1;
+  decision1 = tolower(decision1);
 
   cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
       <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -34,7 +35,7 @@ int main()
 
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
-
+  decision2 = tolower(decision2);
   if(decision1 == 't' && decision2 == 's')
   {
     cout<<player1name<<" stole while "<<player2name<<" split. "
@@ -58,8 +59,8 @@ int main()
  
   cout << "Would you like to play again? Y/N" << endl;
   cin >> again;
-
-  if(again == 'Y'){
+  again = tolower(again);
+  if(again == 'y'){
     cout << "Great!" << endl;
   }else{
     cout << "Goodbye" << endl;
