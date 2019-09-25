@@ -1,6 +1,7 @@
 //Kevin Buffardi (with help of class)
 #include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 int main()
@@ -33,17 +34,17 @@ int main()
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
 
-  if(decision1 == 't' && decision2 == 's')
+  if(tolower(decision1) == 't' && tolower(decision2) == 's')
   {
     cout<<player1name<<" stole while "<<player2name<<" split. "
         <<player1name<<" WINS ALL OF THE PRIZE!\n";
   }
-  else if(decision2 == 't' && decision1 == 's')
+  else if(tolower(decision2) == 't' && tolower(decision1) == 's')
   {
     cout<<player2name<<" stole while "<<player1name<<" split. "
         <<player2name<<" WINS ALL OF THE PRIZE!\n";
   }
-  else if(decision1 == 's' && decision2 == 's')
+  else if(tolower(decision1) == 's' && tolower(decision2) == 's')
   {
     cout<<"Both players cooperated and chose to split. Congrats, "
         <<player1name<<" and "<<player2name<<" you each get half the prize!\n";
