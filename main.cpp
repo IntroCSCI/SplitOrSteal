@@ -3,15 +3,13 @@
 #include <string>
 using namespace std;
 
+void play(string player1name, string player2name);
+
 int main()
 {
   //player names
   string player1name = "";
   string player2name = "";
-
-  //player responses
-  char decision1 = ' ';
-  char decision2 = ' ';
 
 
   cout<<"Player 1, please enter your name: ";
@@ -19,7 +17,20 @@ int main()
   cout<<"Player 2, please enter your name: ";
   cin>>player2name;
 
-  cout<<"WELCOME TO SPLIT OR STEAL!\n";
+play(player1name,player2name);
+
+  return 0;
+}
+
+void play(string player1name, string player2name)
+{
+string playAgain;
+//player responses
+char decision1 = ' ';
+char decision2 = ' ';
+while(playAgain != "n")
+{
+	cout<<"WELCOME TO SPLIT OR STEAL!\n";
 
   cout<<player1name<<", please enter the character of your choice...\n";
   cout<<"Please enter (s)plit or s(t)eal: ";
@@ -53,21 +64,7 @@ int main()
     cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
         <<"win a prize and go home with NOTHING!\n";
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  return 0;
+  cout<<"Want to play again? type anything to continue or 'n' to end game.\n";
+  cin>>playAgain;
+}
 }
