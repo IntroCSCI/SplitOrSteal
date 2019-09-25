@@ -33,7 +33,7 @@ int main()
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
 
-  if(decision1 == 't' && decision2 == 's')
+  if((decision1 == 't' || decision1 == 'T' ) && (decision2 == 's' || decision2 =='S'))
   {
     cout<<player1name<<" stole while "<<player2name<<" split. "
         <<player1name<<" WINS ALL OF THE PRIZE!\n";
