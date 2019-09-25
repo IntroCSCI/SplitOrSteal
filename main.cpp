@@ -13,7 +13,10 @@ int main()
   char decision1 = ' ';
   char decision2 = ' ';
 
+  bool playAgain = true;
 
+
+  while (playAgain) {
   cout<<"Player 1, please enter your name: ";
   cin>>player1name;
   cout<<"Player 2, please enter your name: ";
@@ -32,6 +35,11 @@ int main()
 
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
+
+  char tmp1 = tolower(decision1);
+  decision1 = tmp1;
+  char tmp2 = tolower(decision2);
+  decision2 = tmp2;
 
   if(decision1 == 't' && decision2 == 's')
   {
@@ -52,6 +60,13 @@ int main()
   {
     cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
         <<"win a prize and go home with NOTHING!\n";
+  }
+  cout << "Would you like to play again? (Y/N)" << endl;
+  char response;
+  cin >> response;
+  char resp = tolower(response);
+  if (resp == 'n')
+    playAgain = false;
   }
 
 
