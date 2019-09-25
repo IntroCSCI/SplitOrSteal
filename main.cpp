@@ -9,7 +9,8 @@ int main()
 {
   //player names
   string player1name = "";
-  string player2name = "";
+  string player2name = ""; // attempted to add toupper but thats not -really-
+  // the assignment, now is it.
 
   //player responses
   char decision1 = ' ';
