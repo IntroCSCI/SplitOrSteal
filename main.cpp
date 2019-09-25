@@ -22,6 +22,11 @@ int main()
   cout<<"WELCOME TO SPLIT OR STEAL!\n";
 
   cout<<player1name<<", please enter the character of your choice...\n";
+
+char again = 'y';
+
+while( again == 'y')
+{
   cout<<"Please enter (s)plit or s(t)eal: ";
   cin>>decision1;
 
@@ -32,6 +37,16 @@ int main()
 
   cout<<player2name<<", please enter the character of your choice...\n";
   cin>>decision2;
+
+ if(isupper(decision1))
+{
+	decision1 = tolower(decision1);
+}
+if(isupper(decision2))
+{
+	decision2 = tolower(decision2);
+}
+
 
   if(decision1 == 't' && decision2 == 's')
   {
@@ -53,8 +68,15 @@ int main()
     cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
         <<"win a prize and go home with NOTHING!\n";
   }
+cout << "want to play again (y or n):";
+cin >> again;
+cout << endl;
+if(isupper(again))
+{
+	again = tolower(again);
+}
 
-
+}
 
 
 
