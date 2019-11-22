@@ -3,50 +3,60 @@
 #include <string>
 using namespace std;
 
+
+struct Player
+{
+  string name;
+  char decision;
+};
+
+
+string getPlayerName(string);
+void getDecision(struct Player &);
+
 int main()
 {
   //player names
-  string player1name = "";
-  string player2name = "";
+  //string player1name = "";
+  //string player2name = "";
 
   //player responses
-  char decision1 = ' ';
-  char decision2 = ' ';
+  //char decision1 = ' ';
+  //char decision2 = ' ';
+  
+  struct Player player1;
+  struct Player player2;
 
 
-  cout<<"Player 1, please enter your name: ";
-  cin>>player1name;
-  cout<<"Player 2, please enter your name: ";
-  cin>>player2name;
+
+  player1.name = getPlayerName("Player 1");
+  player2.name = getPlayerName("Player 2");
 
   cout<<"WELCOME TO SPLIT OR STEAL!\n";
 
-  cout<<player1name<<", please enter the character of your choice...\n";
-  cout<<"Please enter (s)plit or s(t)eal: ";
-  cin>>decision1;
+  getDecision(player1);
 
   cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
       <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
       <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
       <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
-  cout<<player2name<<", please enter the character of your choice...\n";
-  cin>>decision2;
+  getDecision(player2);
 
-  if(decision1 == 't' && decision2 == 's')
+  if(player1.decision == 't' && player2.decision == 's')
   {
-    cout<<player1name<<" stole while "<<player2name<<" split. "
-        <<player1name<<" WINS ALL OF THE PRIZE!\n";
+    cout<<player1.name<<" stole while "<<player2.name<<" split. "
+        <<player1.name<<" WINS ALL OF THE PRIZE!\n";
   }
-  else if(decision2 == 't' && decision1 == 's')
+  else if(player2.decision == 't' && player1.decision == 's')
   {
-    cout<<player2name<<" stole while "<<player1name<<" split. "
-        <<player2name<<" WINS ALL OF THE PRIZE!\n";
+    cout<<player2.name<<" stole while "<<player1.name<<" split. "
+        <<player2.name<<" WINS ALL OF THE PRIZE!\n";
   }
-  else if(decision1 == 's' && decision2 == 's')
+  else if(player1.decision == 's' && player2.decision == 's')
   {
     cout<<"Both players cooperated and chose to split. Congrats, "
-        <<player1name<<" and "<<player2name<<" you each get half the prize!\n";
+        <<player1.name<<" and "<<player2.name<<" you each get half the prize!\n";
   }
   else
   {
@@ -54,20 +64,38 @@ int main()
         <<"win a prize and go home with NOTHING!\n";
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   return 0;
 }
+
+string getPlayerName(string prompt)
+{
+    string input;
+    cout<<prompt<<", please enter your name: ";
+    cin>>input;
+    return input;
+}
+
+void getDecision(struct Player & current)
+{
+  cout<<current.name<<", please enter the character of your choice...\n";
+  cout<<"Please enter (s)plit or s(t)eal: ";
+  cin>>current.decision;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
