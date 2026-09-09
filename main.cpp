@@ -1,101 +1,53 @@
-//Kevin Buffardi (with help of class)
 #include <iostream>
-#include <string>
+#include <cstdlib> // for rand(), srand()
+#include <ctime>   // for time()
 using namespace std;
-
-
-struct Player
-{
-  string name;
-  char decision;
-};
-
-
-string getPlayerName(string);
-void getDecision(struct Player &);
 
 int main()
 {
-  //player names
-  //string player1name = "";
-  //string player2name = "";
+  string playerName = "";
+  int playerDecision = 0;
+  bool playerSteal = false;
+  bool computerSteal = false;
 
-  //player responses
-  //char decision1 = ' ';
-  //char decision2 = ' ';
+  // Seed the random number generator
+  srand(time(0));
   
-  struct Player player1;
-  struct Player player2;
+  // Randomize computer choice
+  computerSteal = rand() % 2;
+  
+  cout << "Welcome to Split or Steal!\nWhat's your name? ";
+  getline(cin, playerName);
 
+  cout << playerName << " make a choice:\n";
+  cout << "1 - Split\n";
+  cout << "2 - Steal\n";
+  cout << "Enter the number of your choice: ";
+  cin >> playerDecision;
 
-
-  player1.name = getPlayerName("Player 1");
-  player2.name = getPlayerName("Player 2");
-
-  cout<<"WELCOME TO SPLIT OR STEAL!\n";
-
-  getDecision(player1);
-
-  cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-      <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-      <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-      <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-
-  getDecision(player2);
-
-  if(player1.decision == 't' && player2.decision == 's')
+  switch(playerDecision)
   {
-    cout<<player1.name<<" stole while "<<player2.name<<" split. "
-        <<player1.name<<" WINS ALL OF THE PRIZE!\n";
+    case 1:
+      playerSteal = false;
+      cout << playerName << " chose to Split\n";
+      break;
+    case 2:
+      cout << playerName << " chose to Steal\n";
+      playerSteal = true;
+      break;
+    default:
+      cout << "Invalid choice. Defaulting to Split.\n";
+      playerSteal = false;
+      break;
   }
-  else if(player2.decision == 't' && player1.decision == 's')
+  switch(computerSteal)
   {
-    cout<<player2.name<<" stole while "<<player1.name<<" split. "
-        <<player2.name<<" WINS ALL OF THE PRIZE!\n";
+    case false:
+      cout << "Computer chose to Split.\n";
+      break;
+    case true:
+      cout << "Computer chose to Steal.\n";
+      break;
   }
-  else if(player1.decision == 's' && player2.decision == 's')
-  {
-    cout<<"Both players cooperated and chose to split. Congrats, "
-        <<player1.name<<" and "<<player2.name<<" you each get half the prize!\n";
-  }
-  else
-  {
-    cout<<"Sorry, you were both greedy and chose to steal. Neither of you "
-        <<"win a prize and go home with NOTHING!\n";
-  }
-
-  return 0;
+  return 0; 
 }
-
-string getPlayerName(string prompt)
-{
-    string input;
-    cout<<prompt<<", please enter your name: ";
-    cin>>input;
-    return input;
-}
-
-void getDecision(struct Player & current)
-{
-  cout<<current.name<<", please enter the character of your choice...\n";
-  cout<<"Please enter (s)plit or s(t)eal: ";
-  cin>>current.decision;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
